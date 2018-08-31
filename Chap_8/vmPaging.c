@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+#include<unistd.h>
 int main(int argc, char* argv[]){
     unsigned int vAddress;
     char* ptr;
-    if(argc > 2) vAddress = strtoul(argv[1], &ptr, 10);  // get virtual address
-    printf("%u", vAddress);
+    if(argc < 2) exit(1);
+
+    vAddress = atoi(argv[1]);  // get virtual address
 
     /*************************************************************
      * parameter is decimal virtual address
